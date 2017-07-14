@@ -1,0 +1,26 @@
+.section-acf {
+	/*height: 50vh;*/
+	p {
+		color: #fff;
+	}
+}
+
+.section-acf-content {
+/*	position: relative;
+	top: 90%;*/
+	padding: 10% 0;
+	z-index: 1;
+}
+
+.section-acf-content:nth-of-type(1) {
+	margin-top: 5rem;
+}
+
+.section-acf-overlay{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/*background: rgba(0,32,66,.5);*/
+	top: -17rem;
+	left: 0;
+}

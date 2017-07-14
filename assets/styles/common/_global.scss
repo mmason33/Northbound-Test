@@ -1,1 +1,196 @@
+/*GLOBAL STYLES
+COLORS:
+$brand-primary = #002042
+$brand-secondary = #2777B1
+#002042 = #ef6f00*/
 
+html{
+  font-size: 62.5%
+}
+
+*::selection{
+    background: #ef6f00 !important;
+}
+
+*::-moz-selection{
+    background: #ef6f00 !important;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  background: url('/wp-content/uploads/2017/04/sidebar-temp-background.jpg') no-repeat center center;
+  /*background: rgba(0,32,66,.25);*/
+  background-size: cover;
+  background-attachment: fixed;  
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  color: #353535;
+  font-weight: 400;
+}
+
+/*h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.7rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2.3rem;
+}*/
+
+p {
+  /*font-size: 1.8rem;*/
+  line-height: 3.25rem;
+  color: #6b6b6b;
+  font-weight: 300;
+}
+
+.screen-reader-text {
+  display: none !important;
+}
+
+a, button {
+  font-family: 'Montserrat', sans-serif;
+  &:hover, &:focus {
+    cursor:pointer;
+  }
+}
+
+a, a h3 {
+  color: #002042;
+  &:hover, &:focus {
+    color: #002042;
+    text-decoration: none !important;
+  }
+}
+
+
+ul.list, ol.list {
+  /*font-size: 1.8rem !important;*/
+  line-height: 4rem !important;
+  color: #6b6b6b;
+  list-style-type: none;
+  li:before {
+    content: "\2022";
+    color: #ef6f00;
+    display: inline-block;
+    width: 1.6rem;
+    margin-left: -1.6rem;
+    font-size:3rem;
+  }
+}
+
+.img-fluid {
+  border-radius: 5px;
+}
+
+footer {
+    /*background-image: linear-gradient(0deg,#002042 0,#0e4577 100%);*/
+    background: #002042;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/*hr {
+  border-top: 2px solid #ef6f00;
+}*/
+
+@media screen and (max-width: 1600px) {
+
+/*  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.7rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+
+  h4 {
+    font-size: 2.2rem;
+  }
+
+  h5 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  } */
+
+}
+
+@media screen and(max-width:1025px){
+/*  body{
+    font-size:1.35rem;
+  }*/
+
+/*  p {
+    line-height: 3rem;
+  }*/
+
+}
+
+@media screen and (max-width:768px){
+/*  body {
+    font-size: 1.25rem;
+  }*/
+}
+
+@media screen and (max-width: 576px) {
+
+/*  h1 {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 2.1rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.9rem;
+  }
+
+  h5 {
+    font-size: 1.8rem;
+  }*/
+
+}
+
+/*print correction*/
+@media print{
+    [data-aos] {
+        display: block !important;
+        opacity: 1 !important;
+        transform: translate(0) scale(1) !important;
+    }
+}
