@@ -18,7 +18,64 @@
     // All pages
     'common': {
       init: function() {
-        // JavaScript to be fired on all pages
+       
+        $(document).ready( function () {
+              var body = $("body"),
+                   navOverlay = $(".overlay"),
+                   nav = $("nav#off-canvas-nav"),
+                   navIcon = $("#nav-icon"),
+                   subMenu = $("li.menu-item-has-children > a");
+              navIcon.click(function(e) {
+                  e.preventDefault();
+                  $(this).toggleClass("open");
+                  body.toggleClass("nav-open");
+                  nav.toggleClass("open");
+              });
+              navOverlay.click(function() {
+                  navIcon.removeClass("open");
+                  body.removeClass("nav-open");
+                  nav.removeClass("open");
+              });
+              subMenu.click(function(drop) {
+                  drop.preventDefault();
+                  $(this).parent().toggleClass("open");
+              });
+
+
+              $(window).scroll(function(){
+                if ($('.hero').length !== 0) {
+                    if($(window).scrollTop() >= 400) {
+                      $('header.header').addClass('blue');
+                    } else {
+                      $('header.header').removeClass('blue');
+                    }
+                }
+              });
+
+              // v=I0cbrQUCHJ4
+
+              // AIzaSyD2V_BHDg5FA-wDqe5ihKKH7pIVgEzYGIE
+
+              // function youTubeApi() {
+              //   var res;
+              //   $.ajax({
+              //     url: 'https://www.googleapis.com/youtube/v3/videos?id=I0cbrQUCHJ4&key=AIzaSyD2V_BHDg5FA-wDqe5ihKKH7pIVgEzYGIE&part=snippet',
+              //     method: 'GET'
+              //   }).done(function (result) {
+              //     res = result;
+              //     console.log(res);
+              //     var id = 'https://www.youtube.com/watch?v=' + res.items[0].id;
+              //     $('.test source').attr('src', id);
+
+              //   });
+
+              // }
+              // youTubeApi();
+
+
+              
+        });
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
