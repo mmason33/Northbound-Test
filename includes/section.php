@@ -14,7 +14,7 @@ $overlay = (get_sub_field('overlay') == 1 ? '<div class="section-acf-overlay" st
 <?php if ($bgImage): ?>
 		<section class="section-acf"<?php echo $bgImage; ?>> 
 <?php else: ?>
-		<section class="section-acf" style="background:white;">
+		<section class="section-acf white-text" style="background:linear-gradient(to top, rgba(147,187,216,.85),rgba(0,32,66,.85), transparent);background-attachment: fixed;">
 <?php endif; ?>
 
 	<div class="container">

@@ -42,7 +42,9 @@
               });
 
 
+
               $(window).scroll(function(){
+
                 if ($('.hero').length !== 0) {
                     if($(window).scrollTop() >= 400) {
                       $('header.header').addClass('blue');
@@ -50,7 +52,30 @@
                       $('header.header').removeClass('blue');
                     }
                 }
+
+
+                var hT = $('.big').offset().top;
+                var hH = $('.big').outerHeight();
+                var wH = $(window).height();
+                var wS = $(window).scrollTop();
+                var diff = (hT + hH) - wH;
+                var counter = 0;
+                console.log(wS,diff);
+                if (wS > diff) {
+
+                  var counting = setInterval(function () {
+                    if (counter < 50) {
+                      counter++;
+                      $('.big').text(counter).css({'border-width': counter / 10, 'border-radius': counter + '%'});
+                    }  
+                  }, 100);
+                  
+                }
+
+
+
               });
+
 
               // v=I0cbrQUCHJ4
 

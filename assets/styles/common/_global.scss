@@ -36,8 +36,9 @@ body{
 h1,h2,h3,h4,h5,h6{
   font-family: 'Montserrat', sans-serif;
   line-height: 1.5;
-  color: #353535;
-  font-weight: 400;
+  color: #002042;
+  font-weight: 500;
+  text-shadow: 1px 1px 5px #fff;
 }
 
 /*blue class for nav*/
@@ -48,7 +49,7 @@ h1,h2,h3,h4,h5,h6{
 
 .white {
   color: #fff;
-  text-shadow: 1px 1px 1px #000;
+  text-shadow: 1px 1px 5px #000;
 }
 
 /*h1 {
@@ -74,8 +75,9 @@ h5 {
 p {
   /*font-size: 1.8rem;*/
   /*line-height: 3.25rem;*/
-  color: #6b6b6b;
-  font-weight: 300;
+  color: #002042;
+  font-weight: 400;
+  text-shadow: 1px 1px 5px #fff;
 }
 
 .screen-reader-text {
@@ -98,18 +100,24 @@ a, a h3 {
 }
 
 
-ul.list, ol.list {
+ul, ol {
   /*font-size: 1.8rem !important;*/
   /*line-height: 4rem !important;*/
   color: #6b6b6b;
   list-style-type: none;
-  li:before {
+  padding: 0;
+/*  li:before {
     content: "\2022";
     color: #ef6f00;
     display: inline-block;
     width: 1.6rem;
     margin-left: -1.6rem;
     font-size:3rem;
+  }*/
+  li {
+    .fa {
+      color: #ef6f00;
+    }
   }
 }
 

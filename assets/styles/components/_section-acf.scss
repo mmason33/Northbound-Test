@@ -4,27 +4,20 @@
 	z-index: 1;
 }
 
-/*.section-acf:after {
-	content: '';
-	position: relative;
-	height: 500px;
-	width: 100%;
-	top: 0;
-	left: 0;
-	background: rgba(0,32,66,.5);
-}*/
+.white-text {
+	h1,h2,h3,h4,h5,h6,p,.fa {
+		color: #fff;
+		text-shadow: 1px 1px 4px #000;
+	}
+}
 
-/*.section-acf-overlay{
-	content: '';
-	position: relative;
-	top: 0;
-	left: 0;
-	background: rgba(0,32,66,.5);
-	height: 500px;
-	width: 100%;
-}*/
-
-
+.big {
+	font-size: 5em;
+	border: 1px solid rgb(0, 32, 66);
+    border-radius: 0%;
+    display: inline;
+    padding: 1rem;
+}
 
 /* hero section */
 
