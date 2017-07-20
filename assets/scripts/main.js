@@ -42,64 +42,87 @@
               });
 
 
+                  var a = 0;
+                  $(window).scroll(function(){
+                      if ($('.hero').length !== 0) {
+                          if($(window).scrollTop() >= 400) {
+                            $('header.header').addClass('blue');
+                          } else {
+                            $('header.header').removeClass('blue');
+                          }
+                      }
 
-              $(window).scroll(function(){
+                      var oTop = $('.big').offset().top - window.innerHeight;
+                        if (a === 0 && $(window).scrollTop() > oTop) {
+                          $('.big').each(function() {
+                            var $this = $(this),
+                              countTo = $this.attr('data-count');
+                            $({
+                              countNum: $this.text()
+                            }).animate({
+                                countNum: countTo
+                              },
 
-                if ($('.hero').length !== 0) {
-                    if($(window).scrollTop() >= 400) {
-                      $('header.header').addClass('blue');
-                    } else {
-                      $('header.header').removeClass('blue');
+                              {
+
+                                duration: 2000,
+                                easing: 'swing',
+                                step: function() {
+                                  $this.text(Math.floor(this.countNum));
+                                },
+                                complete: function() {
+                                  $this.text(this.countNum);
+                                  //alert('finished');
+                                }
+
+                              });
+                          });
+                          a = 1;
+                        }
+
+                  });//end scroll
+
+                $.ajax({
+                  url: 'http://api.openweathermap.org/data/2.5/weather?lat=33.62&lon=-117.93&units=imperial&appid=9951bddf3af7e21abdb61ad50b4325a2',
+                  method: 'GET'
+                }).done( function (response) {
+
+                  console.log(response);
+
+                  // function jsUcfirst(string) {
+                  //     return string.charAt(0).toUpperCase() + string.slice(1);
+                  // }  [33.62,-117.93]
+
+                  function icon(string) {
+                    var icon;
+                    switch(string) {
+                      case 'Clouds':
+                        icon = 'fa-cloud';
+                        break;
+                      case 'Clear':
+                        icon = 'fa-sun-o';
+                        break;
                     }
-                }
+                    return icon;
 
+                  }
 
-                var hT = $('.big').offset().top;
-                var hH = $('.big').outerHeight();
-                var wH = $(window).height();
-                var wS = $(window).scrollTop();
-                var diff = (hT + hH) - wH;
-                var counter = 0;
-                console.log(wS,diff);
-                if (wS > diff) {
+                  $('.weather').append(
 
-                  var counting = setInterval(function () {
-                    if (counter < 50) {
-                      counter++;
-                      $('.big').text(counter).css({'border-width': counter / 10, 'border-radius': counter + '%'});
-                    }  
-                  }, 100);
-                  
-                }
+                    '<h5 class="white">Newport Beach <i class="fa ' + icon(response.weather[0].main) + '" aria-hidden="true"></i></h5>' +
+                    '<p class="white">Forecast: ' + response.weather[0].main +
+                    '<br>T: ' + response.main.temp + '&deg; | ' +
+                    'RH: ' + response.main.humidity + '%</p>' +
+                    'img src="' + response.weather[0].icon + '">'
 
+                  );
 
+                });
 
-              });
-
-
-              // v=I0cbrQUCHJ4
-
-              // AIzaSyD2V_BHDg5FA-wDqe5ihKKH7pIVgEzYGIE
-
-              // function youTubeApi() {
-              //   var res;
-              //   $.ajax({
-              //     url: 'https://www.googleapis.com/youtube/v3/videos?id=I0cbrQUCHJ4&key=AIzaSyD2V_BHDg5FA-wDqe5ihKKH7pIVgEzYGIE&part=snippet',
-              //     method: 'GET'
-              //   }).done(function (result) {
-              //     res = result;
-              //     console.log(res);
-              //     var id = 'https://www.youtube.com/watch?v=' + res.items[0].id;
-              //     $('.test source').attr('src', id);
-
-              //   });
-
-              // }
-              // youTubeApi();
 
 
               
-        });
+        });//end ready
 
       },
       finalize: function() {

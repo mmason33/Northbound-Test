@@ -21,18 +21,18 @@ use Roots\Sage\Wrapper;
     <?php get_template_part('includes/hero'); ?>
     <?php do_action('get_builder'); ?>
     <?php  get_template_part('includes/builder'); ?>
-    <div class="wrap container" role="document">
-      <div class="content row">
-        <main class="main">
+    <!-- <div class="wrap container" role="document"> -->
+      <!-- <div class="content row"> -->
+        <!-- <main class="main"> -->
           <?php include Wrapper\template_path(); ?>
-        </main><!-- /.main -->
+        <!-- </main>/.main -->
         <?php if (Setup\display_sidebar()) : ?>
-          <aside class="sidebar">
+          <!-- <aside class="sidebar"> -->
             <?php include Wrapper\sidebar_path(); ?>
-          </aside><!-- /.sidebar -->
+          <!-- </aside>/.sidebar -->
         <?php endif; ?>
-      </div><!-- /.content -->
-    </div><!-- /.wrap -->
+      <!-- </div>/.content -->
+    <!-- </div>/.wrap -->
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');

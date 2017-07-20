@@ -1,10 +1,10 @@
 .section-acf-content {
 	position: relative;
-	padding: 5% 0;
+	padding: 2.5% 0;
 	z-index: 1;
 }
 
-.white-text {
+.white {
 	h1,h2,h3,h4,h5,h6,p,.fa {
 		color: #fff;
 		text-shadow: 1px 1px 4px #000;
@@ -12,8 +12,7 @@
 }
 
 .big {
-	font-size: 5em;
-	border: 1px solid rgb(0, 32, 66);
+	font-size: 3rem;
     border-radius: 0%;
     display: inline;
     padding: 1rem;
