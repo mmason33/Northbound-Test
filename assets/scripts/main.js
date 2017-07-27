@@ -109,11 +109,10 @@
 
                   $('.weather').append(
 
-                    '<h5 class="white">Newport Beach <i class="fa ' + icon(response.weather[0].main) + '" aria-hidden="true"></i></h5>' +
+                    '<h5 class="white">Newport Beach<img src="http://openweathermap.org/img/w/' + response.weather[0].icon + '.png"></h5>' +
                     '<p class="white">Forecast: ' + response.weather[0].main +
                     '<br>T: ' + response.main.temp + '&deg; | ' +
-                    'RH: ' + response.main.humidity + '%</p>' +
-                    'img src="' + response.weather[0].icon + '">'
+                    'RH: ' + response.main.humidity + '%</p>' 
 
                   );
 
