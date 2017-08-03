@@ -1,4 +1,4 @@
-<footer class="content-info" style="background:url(/wp-content/uploads/2017/07/small-sun.jpg) no-repeat fixed;background-size:cover;background-position:0 -70%;padding: 1.5%;">
+<footer class="content-info" style="background:url(/wp-content/uploads/2017/07/small-sun.jpg) no-repeat center center;background-size:cover;padding: 1.5%;">
   <div class="container">
 <style>
 .creds {display: block;}

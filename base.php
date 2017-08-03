@@ -18,9 +18,11 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
+    <?php if (!is_page_template('template-custom.php')): ?>
     <?php get_template_part('includes/hero'); ?>
     <?php do_action('get_builder'); ?>
     <?php  get_template_part('includes/builder'); ?>
+    <?php endif; ?>
     <!-- <div class="wrap container" role="document"> -->
       <!-- <div class="content row"> -->
         <!-- <main class="main"> -->

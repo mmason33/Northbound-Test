@@ -41,47 +41,6 @@
                   $(this).parent().toggleClass("open");
               });
 
-
-                  var a = 0;
-                  $(window).scroll(function(){
-                      if ($('.hero').length !== 0) {
-                          if($(window).scrollTop() >= 400) {
-                            $('header.header').addClass('blue');
-                          } else {
-                            $('header.header').removeClass('blue');
-                          }
-                      }
-
-                      var oTop = $('.big').offset().top - window.innerHeight;
-                        if (a === 0 && $(window).scrollTop() > oTop) {
-                          $('.big').each(function() {
-                            var $this = $(this),
-                              countTo = $this.attr('data-count');
-                            $({
-                              countNum: $this.text()
-                            }).animate({
-                                countNum: countTo
-                              },
-
-                              {
-
-                                duration: 2000,
-                                easing: 'swing',
-                                step: function() {
-                                  $this.text(Math.floor(this.countNum));
-                                },
-                                complete: function() {
-                                  $this.text(this.countNum);
-                                  //alert('finished');
-                                }
-
-                              });
-                          });
-                          a = 1;
-                        }
-
-                  });//end scroll
-
                 $.ajax({
                   url: 'http://api.openweathermap.org/data/2.5/weather?lat=33.62&lon=-117.93&units=imperial&appid=9951bddf3af7e21abdb61ad50b4325a2',
                   method: 'GET'
@@ -131,7 +90,45 @@
     // Home page
     'home': {
       init: function() {
-        // JavaScript to be fired on the home page
+        var a = 0;
+        $(window).scroll(function(){
+            if ($('.hero').length !== 0) {
+                if($(window).scrollTop() >= 400) {
+                  $('header.header').addClass('blue');
+                } else {
+                  $('header.header').removeClass('blue');
+                }
+            }
+
+            var oTop = $('.big').offset().top - window.innerHeight;
+              if (a === 0 && $(window).scrollTop() > oTop) {
+                $('.big').each(function() {
+                  var $this = $(this),
+                    countTo = $this.attr('data-count');
+                  $({
+                    countNum: $this.text()
+                  }).animate({
+                      countNum: countTo
+                    },
+
+                    {
+
+                      duration: 2000,
+                      easing: 'swing',
+                      step: function() {
+                        $this.text(Math.floor(this.countNum));
+                      },
+                      complete: function() {
+                        $this.text(this.countNum);
+                        //alert('finished');
+                      }
+
+                    });
+                });
+                a = 1;
+              }
+
+        });//end scroll
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
